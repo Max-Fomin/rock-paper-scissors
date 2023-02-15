@@ -3,7 +3,6 @@ let choice = [
     'paper',
     'scissors'
 ];
-//let promptCheck = false
 let playerWins = 0;
 let computerWins = 0;
 
@@ -60,7 +59,7 @@ function roundResults(player1, player2) {
             draw();
         }
     }
-    result.textContent += `\nScore is ${playerWins} : ${computerWins}`;
+    result.textContent += `\nScore is ${playerWins} : ${computerWins}` + '\r\n';
 }
 
 function getComputerChoice() {
@@ -84,20 +83,6 @@ scissorsChoice.addEventListener('click', function () {
         aRound();
     })
 
-
-/*function getPlayerChoice() {
-    while (promptCheck === false) {
-        let playerChoice = prompt('Rock, paper or scissors?', '').toLowerCase();
-            if (choice.includes(playerChoice)){
-                promptCheck = true;
-                return playerChoice;
-            } else {
-                alert('There is no such option!');
-            }
-    }
-}
-*/
-
 function aRound() {
     result.textContent += `\nYou chose ${playerChoice}`;
     computerChoice = getComputerChoice();
@@ -109,10 +94,10 @@ function aRound() {
 
 function isGameEnd() {
 if (playerWins === 5) {
-    score.textContent += 'Congrats! You Won!'
+    score.textContent += '\nYou Won!'
     disableButtons();
 } else if (computerWins === 5) {
-    score.textContent += 'Computer Won! Better luck next time!'
+    score.textContent += '\nComputer Won!'
     disableButtons();
 }
 }
